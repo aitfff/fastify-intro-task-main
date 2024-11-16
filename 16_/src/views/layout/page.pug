@@ -1,0 +1,21 @@
+extends layout/page.pug
+
+block content
+  // Выводим флеш-сообщения
+  if flash.success
+    div.alert.alert-success 
+      | #{flash.success}
+
+  if flash.error
+    div.alert.alert-danger 
+      | #{flash.error}
+
+  a(href='/posts/new') Создать пост
+
+  div.table-responsive
+    table.table.table-borderless.table-striped.mt-5.bg-white
+      tbody
+        each post, index in posts
+          tr
+            td
+              a(href='/posts/' + post.id) #{post.title}

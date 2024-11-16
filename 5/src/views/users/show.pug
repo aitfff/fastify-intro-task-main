@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title User Details
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+  body
+    .container
+      h1 User Details
+      p
+        strong Username:
+        | #{user.username}
+      p
+        strong Email:
+        | #{user.email}
+      a(href='/users') Back to User List

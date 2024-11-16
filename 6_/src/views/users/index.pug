@@ -1,0 +1,14 @@
+extends layout/page
+
+block content
+  h1 Список пользователей
+  table.table.table-striped
+    thead
+      tr
+        th Username
+        th Email
+    tbody
+      each user in users
+        tr
+          td= user.username
+          td= user.email

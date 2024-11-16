@@ -1,0 +1,18 @@
+extends ../layout/page.pug
+
+block content
+  h1 Редактировать пост
+  if errors.length > 0
+    ul
+      each error in errors
+        li= error
+  form(action=`/posts/${post.id}`, method='post')
+    div
+      label Название:
+      input(type='text', name='title', value=post.title)
+    div
+      label Текст:
+      textarea(name='body')= post.body
+    div
+      input(type='submit', value='Сохранить изменения')
+  a(href='/posts') Отменить

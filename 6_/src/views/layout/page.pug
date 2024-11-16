@@ -1,0 +1,21 @@
+doctype html
+html(lang="ru")
+  head
+    title My Awesome App
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+  body
+    // Header
+    header
+      nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href="/") Главная
+        a.navbar-brand(href="/users") Пользователи
+    
+    // Main content
+    block content
+    
+    // Footer
+    footer.bg-light.text-center.py-3
+      p &copy; 2024. Все права защищены.
+      p
+        | Сделано с любовью. | 
+        a(href="https://github.com/your-profile") Ваш профиль на GitHub

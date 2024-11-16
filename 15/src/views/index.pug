@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Главная
+  body
+    block header
+      p
+        a(href='/') Главная
+    block content
+      if username
+        h1 Добро пожаловать, #{username}
+        form(action="/sessions/delete" method="post")
+          input(type="submit" value="Выйти")
+      else
+        h1 Добро пожаловать, гость
+        p
+          a(href="/sessions/new") Войти

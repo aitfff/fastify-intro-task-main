@@ -1,0 +1,23 @@
+extends ../layout/page.pug
+
+block content
+  h1 Создать статью
+
+  // Вывод ошибок, если они есть
+  if errors.title
+    p.error= errors.title
+
+  if errors.text
+    p.error= errors.text
+
+  // Форма для создания статьи
+  form(action="/articles", method="post")
+    div
+      label Название
+      input(type="text", name="title", value=article.title)
+
+    div
+      label Текст
+      textarea(name="text")= article.text
+
+    input(type="submit", value="Создать")

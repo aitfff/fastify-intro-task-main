@@ -1,0 +1,11 @@
+extends layout/page
+
+block content
+  h1 Подробности пользователя
+  p
+    strong Username:
+    span= user.username
+  p
+    strong Email:
+    span= user.email
+  a(href="/users") Вернуться к списку пользователей

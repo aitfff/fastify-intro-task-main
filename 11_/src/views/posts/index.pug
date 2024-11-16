@@ -1,0 +1,18 @@
+extends layout/page.pug
+
+block content
+  h1 Список Постов
+  ul.list-group
+    each post in posts
+      li.list-group-item
+        a(href=`/posts/${post.id}`) #{post.title}
+
+  // Пагинация
+  nav
+    ul.pagination
+      if pagination.prevPage
+        li.page-item
+          a.page-link(href=`/posts?page=${pagination.prevPage}`) Назад
+      if pagination.nextPage
+        li.page-item
+          a.page-link(href=`/posts?page=${pagination.nextPage}`) Вперед

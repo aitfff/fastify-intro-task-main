@@ -1,0 +1,8 @@
+extends ../layout/page.pug
+
+block content
+  h1 Публикации пользователей
+  each user in users
+    p
+      a(href=route('user', { id: user.id })) #{user.userName}
+      | - #{user.email}

@@ -1,0 +1,19 @@
+extends ../layout/page.pug
+
+block content
+  h1 Создать нового пользователя
+  form(action="/users" method="post")
+    div
+      label Имя:
+      input(type="text" name="username" required="required")
+    div
+      label Email:
+      input(type="email" name="email" required="required")
+    div
+      label Пароль:
+      input(type="password" name="password" required="required")
+    div
+      label Подтверждение пароля:
+      input(type="password" name="passwordConfirm" required="required")
+    div
+      input(type="submit" value="Зарегистрировать")

@@ -1,0 +1,17 @@
+extends ../layout/page.pug
+
+block content
+  h1 Список пользователей
+  form(action="/users", method="GET")
+    div.form-group
+      label(for="term") Поиск по имени пользователя
+      input#term.form-control(type="text", name="term", placeholder="Введите имя пользователя", value=term)
+    button.btn.btn-primary(type="submit") Поиск
+
+  if users.length > 0
+    ul.list-group
+      each user in users
+        li.list-group-item
+          a(href=`/users/${user.id}`) #{user.username} - #{user.email}
+  else
+    p Нет пользователей, соответствующих вашему запросу.
